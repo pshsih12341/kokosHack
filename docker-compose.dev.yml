@@ -1,0 +1,67 @@
+
+services:
+
+  traefik:
+    image: "traefik:v3.1"
+    container_name: "traefik"
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/traefik:/etc/traefik:ro
+      - ./certs:/etc/certs:ro
+    restart: unless-stopped
+
+  db:
+    image: postgres:17
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5433:${DB_PORT}"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - pg_project:/var/lib/postgresql/data
+
+  testservice:
+    build:
+      context: ./backend/test_service
+    env_file:
+      - ./backend/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      db:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.testservice.entrypoints=websecure"
+      - "traefik.http.routers.testservice.rule=Host(`localhost`) && PathPrefix(`/api`)"
+      - "traefik.http.services.testservice.loadbalancer.server.port=80"
+      - "traefik.http.routers.testservice.tls=true"
+    network_mode: host
+
+  frontend:
+    build:
+      context: ./frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.rule=Host(`localhost`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.http.routers.frontend.tls=true"
+
+volumes:
+  pg_project:

@@ -1,0 +1,35 @@
+@font-face {
+    font-family:'Museo Sans Cyrl';
+    src: url('./App/fonts/MuseoSansCyrl100.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family:'Museo Sans Cyrl';
+    src: url('./App/fonts/MuseoSansCyrl300.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family:'Museo Sans Cyrl';
+    src: url('./App/fonts/MuseoSansCyrl500.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family:'Museo Sans Cyrl';
+    src: url('./App/fonts/MuseoSansCyrl700.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family:'Museo Sans Cyrl';
+    src: url('./App/fonts/MuseoSansCyrl900.ttf');
+    font-weight: 900;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Museo Sans Cyrl", sans-serif;
+}
+a{
+    text-decoration: none;
+}

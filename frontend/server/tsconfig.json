@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "moduleResolution": "NodeNext",
+    "sourceMap": true,
+    "outDir": "../dist-server",
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "paths": {
+        "@/*": ["./src/*"],
+      }
+  },
+  "include": ["src/**/*"]
+}

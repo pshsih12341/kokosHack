@@ -1,0 +1,13 @@
+{
+	"name": "frontend",
+	"type": "module",
+	"workspaces": [
+		"client",
+		"server"
+	],
+	"scripts": {
+		"build": "rm -rf dist-client dist-server && npm run build --workspaces",
+		"start": "node dist-server/index.js",
+		"dev:client": "npm run dev -w @frontend/client"
+	}
+}

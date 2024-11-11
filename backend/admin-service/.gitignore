@@ -1,0 +1,27 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Логи
+*.log
+
+# Виртуальные окружения
+.venv/
+env/
+
+# Переменные окружения
+.env
+
+# База данных
+*.sqlite3
+
+# Миграции (опционально)
+*/migrations/*
+
+# Системные файлы
+.DS_Store
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
