@@ -1,14 +1,14 @@
 # Кокос Hackathon 2024
 
-***MISIS x BGITU***
+**_MISIS x BGITU_**
 
 Team Members:
 
-1) **Виктория Гайлитис** - Backend
-2) **Дмитрий Коноплянников** - Backend
-3) **Дарья Короленко** - Design
-4) **Ильдар** - Frontend
-5) **Борис** - Frontend
+1. **Виктория Гайлитис** - Backend
+2. **Дмитрий Коноплянников** - Backend
+3. **Ильдар Ишбулатов** - Design
+4. **Дарья Короленко** - Frontend
+5. **Борис** - Frontend
 
 Презентация:
 
@@ -23,6 +23,7 @@ Swagger API docs:
 ## Предложенное решение
 
 ## Запуск проекта локально с помощью docker compose
+
 Для работы https на localhost требуется сгенерировать сертификаты. Это можно сделать с помощью скрипта:
 
 (требуется установленная утилита [mkcert](https://github.com/FiloSottile/mkcert))
@@ -32,6 +33,7 @@ sh setup-local-certs.sh
 ```
 
 Команда docker compose для запуска локально:
+
 ```
 docker compose --env-file ./.env.dev -f ./docker-compose.dev.yml up
- ```
+```
