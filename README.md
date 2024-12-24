@@ -10,11 +10,9 @@ Team Members:
 4. **Дарья Короленко** - Frontend
 5. **Борис** - Frontend
 
-Презентация:
+Презентация: https://disk.yandex.ru/i/uUn4dacgjqt87Q
 
-Веб-сервис:
-
-Swagger API docs:
+Веб-сервис: https://football.itatmisis.ru/
 
 ## Кейс "Веб-платформа для футбольного клуба"
 
