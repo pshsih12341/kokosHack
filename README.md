@@ -37,7 +37,7 @@ Swagger API docs:
 
 ### Архитектура решения
 
-![arch](ыф.png)
+![arch](ёёё.png)
 
 ### Фичи
 
