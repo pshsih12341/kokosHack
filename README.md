@@ -6,8 +6,8 @@ Team Members:
 
 1. **Виктория Гайлитис** - Backend
 2. **Дмитрий Коноплянников** - Backend
-3. **Ильдар Ишбулатов** - Design
-4. **Дарья Короленко** - Frontend
+3. **Ильдар Ишбулатов** - Frontend
+4. **Дарья Короленко** - Design
 5. **Борис** - Frontend
 
 Презентация: https://disk.yandex.ru/i/uUn4dacgjqt87Q
